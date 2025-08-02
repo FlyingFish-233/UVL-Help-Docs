@@ -1,0 +1,18 @@
+dir
+cd [<directory>]
+echo <string>
+type <file> （nul为空文件）
+del <file>
+
+mkdir <directory>
+rmdir /s <directory>
+move <file> <file/directory>
+copy <file> <file/directory>
+rename <file/directory> <file/directory>
+xcopy /e <directory> <directory> （默认不复制子目录）
+
+ssh-keygen -t rsa -b 4096 -C "user@mails.com"
+ssh-keygen -t ed25519 -C "user@mails.com"
+ssh-copy-id [-i ~/.ssh/id_ed25519.pub] user@192.168.56.1
+
+CertUtil -hashfile 文件路径 MD5

@@ -1,0 +1,25 @@
+C:\Users\lofty\AppData\Local\Programs\Python\Python312\Lib\site-packages
+C:\Users\lofty\.conda\envs\
+
+python -m venv D:\myenv
+D:\myenv\Script\activate
+deactivate
+
+conda -h
+conda -V
+
+conda create -n <env name> python=3.12
+conda init
+conda activate <env name>
+conda deactivate
+conda list [<package>]
+conda install <package> [-n <env name>]
+conda update <package>
+conda remove <package>
+
+conda info
+conda info --envs / conda env list
+conda env export > environment.yml
+conda env create -f environment.yml
+conda remove -n <env name> --all
+conda clean --all

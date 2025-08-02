@@ -1,0 +1,3 @@
+g++ -c <file.cpp> (compile)
+g++ <file.o> -o <file.exe> (link)
+g++ <file.cpp> -o <file.exe> (compile & link)

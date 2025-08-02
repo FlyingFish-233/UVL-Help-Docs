@@ -1,0 +1,54 @@
+git config --global user.name "FlyingFish-233"
+git config --global user.email loftythinking@126.com
+git config --global core.editor "code --wait"
+git config --global -e
+git config --global core.autocrlf true
+【windwos换行是carriage return(\r)和line feed(\n)，而mac换行仅有\n
+windows上core.autocrlf需要是true：检出文件时将 LF 转换为 CRLF，提交文件时将 CRLF 转换回 LF
+mac上core.autocrlf需要是input，提交时将 CRLF 转换为 LF，但检出时不转换。】
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+git config --global -l
+
+git init
+git status [-s]
+git ls-files 【暂存区文件】
+git add [file1.txt file2.txt或 *.txt或 .] 【“.”表示当前目录下所有文件】
+git commit -[a]m " "
+git rm  [--cached] [-r] file.txt 【同时删除工作区和暂存区文件，cached表示仅从缓存区删除】
+git mv file1.txt file2.txt
+
+git restore file.txt 【撤销工作区对文件的更改】
+git restore --staged file.txt 【暂存区中修改过的文件恢复为仓库中文件，未修改的文件被移出暂存区】
+git restore --source=HEAD~k file.txt
+git clean -fd 【删除本地未被 Git 跟踪的文件和目录】
+git reset 【重置暂存区】
+git reset [--soft/--mixed/--hard] 提交或分支 【soft只移动HEAD指针，mixed修改暂存区，hard工作目录也改】
+
+git diff 【工作区与暂存区的差异】
+git diff --staged 【比较暂存区和本地仓库之间差异】
+git diff 分支 【比较工作区与另一分支的差异】
+git diff --staged 分支 【比较暂存区与另一分支的差异】
+git difftool [--staged]
+
+根目录下创建.gitignore忽略文件
+
+git log [--oneline] [--reverse] [--graph] [--all] 【空格翻页，q退出】
+git show 提交记录或文件的标识符
+git show HEAD[~k][:file.txt] 【从最新提交往前k次的提交】
+git ls-tree HEAD[~k]
+
+git remote add origin 仓库链接【添加远程仓库】
+git remote -v
+git fetch origin 【获取远端最新信息】
+git pull origin 远程分支:本地分支
+git push [-u] origin 本地分支:远程分支
+git push origin --delete 分支
+git branch
+git branch [-d] 分支
+git checkout [-b] 分支
+git merge 分支 【将另一分支合并到当前分支】
+git merge --abort
+git difftool [--staged]
+
+

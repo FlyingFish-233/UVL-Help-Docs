@@ -1,0 +1,8 @@
+选项 -> 查看 -> 隐藏受保护的操作系统文件
+win+R -> %temp%
+win+R -> temp
+存储设置 -> 删除临时文件 （也可以删除以前的windows安装文件 windows.old）
+powercfg -h off/on （启用休眠时系统会将内存中的所有数据保存到C盘根目录的hiberfil.sys中）
+
+空白图标问题的解决
+win+R -> %localappdata% -> 删除IconCache.db -> 重启Windows资源管理器

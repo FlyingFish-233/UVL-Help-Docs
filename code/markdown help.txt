@@ -1,0 +1,12 @@
+typora 1.9.5
+
+【Typora】
+D:\ProgramFile\Typora\resources\page-dist\static\js\LicenseIndex.180dd4c7.4da8909c.chunk.js
+hasActivated="true"==e.hasActivated
+hasActivated="true"=="true"
+
+【VScode】
+C:\Users\lofty\\.vscode\extensions\yzane.markdown-pdf-1.5.0\template
+（引入MathJax，使网页能渲染LaTeX格式的数学公式）
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });</script>

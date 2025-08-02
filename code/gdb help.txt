@@ -1,0 +1,20 @@
+g++ -g a.cpp –o a.exe （在可执行程序中包含标准调试信息）
+gdb a.exe
+
+r/run
+q/quit
+c/continue
+s/step （单步执行） 
+n/next （逐过程执行）
+fin/finish （跳出）
+[Enter] （重复上一条指令）
+
+b/break <line> [if (x == 2)]
+d/delete break <point>
+i b/info break
+
+wa/watch x （当x的值发生变化时暂停）
+p/print x （GDB中输入 p x=1，程序中x的值会被手动修改为1）
+disp/display x （持续监测变量/表达式x）
+l/list （列出程序源代码）
+bt/backtrace （函数调用栈）
