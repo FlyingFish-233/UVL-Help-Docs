@@ -1,0 +1,21 @@
+nameserver: /etc/resolv.conf
+
+host -V
+host <domain> (e.g. hsploit.com)
+host <IP> (Reverse DNS resolution)
+host -t <Record> <domain> (<Record>: ns/A/AAAA/cname/mx/txt)
+
+nslookup <domain>
+nslookup -type=<Record> <domain>
+
+nslookup (Enter Interactive mode):
+> set type=<Recode>
+> <domain>
+> exit
+
+dig -h
+dig -v
+dig <domain> [<Record>]
+dig -t <Record> <domain>
+dig <domain> +short
+for ip in $(dig <domain> +short); do nmap $ip; done

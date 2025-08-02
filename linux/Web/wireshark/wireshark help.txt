@@ -1,0 +1,17 @@
+ip addr
+ifconfig
+wireshark
+
+protocol filter:
+tcp, udp, http
+
+address filter:
+ip.src == ...
+ip.dst == ...
+ip.addr == ...
+eth.addr == ...
+tcp.port == ...
+udp.port == ... (53 for DNS)
+
+logical operator:
+and, or, not

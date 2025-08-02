@@ -1,0 +1,130 @@
+sudo apt install vim-gtk3
+
+Change Mode:
+
+visual -> normal: v / [Esc]*2
+normal -> visual: v
+normal -> visual line: V
+normal -> visual block: Ctrl + vb
+insert -> normal: [Esc]
+normal -> insert:
+i (insert mode)
+a (move cursor backward)
+o/Enter (open a new line below)
+I (move cursor to the start of the line)
+A (move cursor to the end of the line)
+O (open a new line above)
+
+
+
+Normal Mode:
+
+:!<command in terminal>
+:help
+:q (Exit)
+:w (write to file)
+:q! (Exit and ignore the change)
+:wq (Exit and write to file)
+:<number> (change line)
+
+
+Config: (file: ~\.vimrc)
+
+:set mouse=a
+:set tabstop=4
+:set shiftwidth=4
+:set expandtab (tab to space)
+:set noexpandtab
+:set autoindent
+
+:colorscheme <color> (My love: torte/habamax/wildcharm)
+:syntax on
+:set showcmd (show the number)
+:set number
+:set relativenumber
+
+<number> + <operate> (repeat the operate <number> times)
+
+Move cursor:
+<- = h
+↓ = j/Enter
+↑ = k
+-> = l
+w/b/e (jump to next word/ previous word/ end of word)
+W/B/E (jump; words are separated by space)
+0/$ (jump to the start/end of line)
+% (switch between left and right bracket)
+f/F<char> (jump forward/backward to the first <char> in line)
+t/T<char> (jump forward/backward the position before the first <char> in line)
+gg/G (jump to start/end of file)
+<number>G/gg (jump to line <number>)
+
+
+Edit:
+u (undo)
+Ctrl+R (redo)
+
+p (paste)
+P (paste beside cursor)
+
+y (copy)
+yy/Y (copy line)
+yw/yW/yb/yB/ye/yE (copy word)
+yiw/yiW (copy in word)
+yi<char> (copy in ""/()/[]/{})
+y0/y$ (copy to the start/end of line)
+y% (copy the whole braket)
+yt<char>/yf<char>
+
+d (delete+copy = cutting)
+dd (delete line)
+D (delete rest of the line)
+dw/dW/db/dB/de/dE (delete word)
+diw/diW (delete in word)
+di<char> (delete in ""/()/[]/{})
+d0/d$ (delete to the start/end of line)
+d% (delete the whole braket)
+dt<char>/df<char>
+
+c (change: clear and enter insert mode)
+cc (change line)
+C (change rest of the line)
+cw/cW/cb/cB/ce/cE (change word)
+ciw/ciW (change in word)
+ci<char> (change in ""/()/[]/{})
+c0/c$ (change to the start/end of line)
+c% (change the whole braket)
+ct<char>/cf<char>
+
+r + <char> (replace with <char>)
+[Delete] (delete a character)
+
+> / < / = (indent)
+[<number>] >> / << / == (indent <number> lines)
+/<word> (search) ; n/N (jump to next/previous word)
+*/# (jump to next/previous token); # is called hashtag)
+m<label> (mark label); '<label> (jump to label)
+[<number>]zz (make the line <number> at the center of window)
+:'<,'>s/<word1>/<word2>[/g] (replace word1 with word2 in the selected part)
+:%s/<word1>/<word2>[/g] (% for the whole file, /g for replacing all words in line not just the first word in line)
+. (repeat command, except for operation @)
+
+:reg (view register)
+<reg name>y (copy the selection into <reg name>)
+<reg name>p (paste the content in <reg name>)
+("+ for clipboard, "" for the last copied text, "0 for the last yanked text)
+q<reg name> + q (recording)
+@<reg name> (use the operation in <reg name>)
+
+
+Terminal:
+:[below/vertical] terminal
+^w + ^w (switch between windows)
+^w + N (enter noemal mode in terminal)
+^w + n (init a new window)
+^w + q (quit a window)
+
+
+
+
+

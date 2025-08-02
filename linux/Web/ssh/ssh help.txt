@@ -1,0 +1,25 @@
+SSH Server:
+
+mousepad /etc/ssh/sshd_config
+
+"##PermitRootLogin prohibit-password" -> "PermitRootLogin yes"
+
+systemctl start ssh
+
+NAT -> port forward -> "SSH TCP <ip> <port> <ip> 22"
+
+
+
+SSH Client:
+
+ssh <user>@<ipv4>
+ssh <user>@[<ipv6>]
+
+scp <file> <user>@<ip>:<path>
+scp -r <directory> <user>@<ip>:<path>
+scp <user>@<ip>:<file> <path>
+scp -r <user>@<ip>:<directory> <path>
+
+sshfs <user>@<ip>:<directory>
+fusermount -u <local_directory>
+

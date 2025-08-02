@@ -1,0 +1,115 @@
+namp -h
+nmap -V
+
+
+Target Host:
+nmap <target1> <target2> ... (e.g. 192.168.56.1 www.baidu.com)
+nmap <target/CIDR> (Classless Inter-Domain Routing) (e.g. 192.168.56.0/24)
+nmap <Range of IP> (e.g. 192.168.56.1-10)
+nmap -iL <file>
+nmap <targets> --exclude <target>
+nmap <targets> --excludefile <file>
+
+nmap -e <interface> <target>
+nmap -6 <IPv6 target>
+nmap -iR <Number of random targets>
+
+
+Target Port:
+nmap -F <target> (Fast scan: just scan for the 100 most commonly used ports)
+nmap -p <port> <target> (e.g. <port>:80,0-10,https ; -p "*" / -p- for all 0-65536 ports)
+nmap --top-ports <Nmber of top ports> <target>
+nmap -sU -sT -p U:<port>,T:<port> <target>
+nmap -r <target> (Scan ports sequentially - don't randomize)
+
+
+Output:
+nmap -v <target>
+nmap -vv <target>
+nmap --reason <target>
+nmap --open <target>
+nmap --packet-trace <target>
+nmap -oN/-oX/-oG <filename> <target> (normal/XML/Grepable format)
+nmap -oA <filename> <target> (output int the 3 major format at the same time)
+nmap -oS <filename> <target> (a joke format)
+nmap --stats-every <time> <target> (Display status every <time>)
+
+
+Ping Scan (Host Discovery):
+nmap -Pn <target> (no Ping scan)
+nmap -PS/PA/PU/PY<port> <target> (TCP SYN/TCP ACK/UDP/SCTP INIT ping to given port for host discovery)
+nmap -PE/PP/PM <target> (ICMP echo/timestamp/netmask request ping for host discovery)
+nmap -PO<protocol> <target> (IP Protocol ping:check if the host can respond to a certain protocol, 1 for ICMP, 6 for tcp, 17 for udp)
+nmap -PR <target> (ARP ping for host discovery in LAN)
+
+
+DNS resolution:
+nmap -n <target> (no DNS resolution)
+nmap -R <target> (Reverse DNS resolution)
+nmap --system-dns <target> (use /etc/resolv.conf)
+nmap --dns-servers <server> <target>
+
+
+Port scan:
+nmap -sn <target> (no port scan)
+nmap -sS/sT/sA/sW/sM <target> (TCP SYN/TCP Connect/ACK/Window/Maimon scans)
+nmap -sU <target> (UDP scan)
+nmap -sN/sF/sX <target> (TCP Null/FIN/Xmas scans)
+nmap --scanflags <flag> <target> (<flag>:URG/ACK/PSH/RST/SYN/FIM)
+nmap -sO <target> (IP protocol scan, use "-p" to set protocol)
+nmap --send-eth/--send-ip <target> (Send using raw ethernet frames or raw IP packets)
+
+
+OS Detection:
+nmap -O <target>
+nmap -O --osscan-limit <target> (Limit OS detection to target which was found at least 1 open and 1 closed port)
+nmap -O --osscan-guess/--fuzzy <target>
+
+
+Service Version Detection:
+nmap -sV <target>
+nmap -sV --version-trace <target> (Show detailed version scan activity)
+nmap -sV --version-intensity <level> <target> (<levet>: from 0 (light) to 9 (try all probes), default intensity 7)
+nmap -sV --version-light <target> (Limit to most likely probes, intensity 2)
+nmap -sV --version-all <target> (Try every single probe, intensity 9)
+
+
+Time:
+nmap -T<0-5> <target> (Set timing template, higher is faster)
+nmap --min-hostgroup/max-hostgroup <size> <target> (Parallel host scan group sizes)
+nmap --min-parallelism/max-parallelism <numprobes> <target>
+nmap --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout <time> <target> (Round trip time, <time>:1000ms/s/m/h)
+nmap --max-retries <tries> <target>
+nmap --host-timeout <time> <target> (Scan one host in no more than <time>)
+nmap --scan-delay/--max-scan-delay <time> <target> (The delay time between sending each packet)
+nmap --min-rate/--max-rate <number> <target> (Send packets no slower/faster than <number> per second)
+nmap --ttl <val> <target>
+
+
+Firewall:
+nmap -f <target> (fragment packets)
+nmap --mtu <val> <target>
+nmap -D <decoy> <target> (use fake source IP, <decoy>: e.g. 192.168.1.1,192.168.1.2,RND:5)
+nmap -sI <zombie host> <target> (Idle zombie scan)
+nmap -S <IP> <target> (use fake source IP)
+nmap -g/--source-port <portnum> <target>
+nmap --data-string <string> <target>
+nmap --data-length <num> <target> (Append random data)
+nmap --randomize-hosts <target>
+nmap --spoof-mac <0/mac address/prefix/vendor name> <target> (0 for random)
+nmap --badsum <target>
+
+
+NSE (Nmap Script Engine):
+/usr/share/nmap/scripts/
+/usr/share/nmap/scripts/script.db
+nmap --script-help <script>
+nmap --script=<Lua scripts> <target>
+nmap --script=<script> --script-args <script>.<arg1> ='...',<script>.<arg2> ='...' <target>
+
+Other:
+nmap --traceroute <target>
+nmap -A <target> (Enable all detection)
+
+
+

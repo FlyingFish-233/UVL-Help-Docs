@@ -1,0 +1,11 @@
+clash: Allow LAN
+
+/etc/environment:
+http_proxy="http://192.168.56.1:7890"
+https_proxy="https://192.168.56.1:7890"
+ftp_proxy="ftp://192.168.56.1:7890"
+
+
+export http_proxy="http://192.168.56.1:7890"
+export https_proxy="https://192.168.56.1:7890"
+export ftp_proxy="ftp://192.168.56.1:7890"

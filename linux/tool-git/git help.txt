@@ -1,0 +1,15 @@
+UserFinder:
+git clone https://github.com/mishakorzik/UserFinder
+cd UserFinder
+chmod +x UserFinder.sh
+bash UserFinder.sh
+
+SimpleWordlists:
+git clone https://github.com/teamstealthsec/wordlists.git
+cd SimpleWordlists
+gobuster dir -u scanme.namp.org -w directory.txt
+gobuster dns -d stealthsecurity.io -w subdomains.txt --wildcard (ignore wildcard response)
+
+phoneinfoga:
+git clone https://github.com/sundowndev/phoneinfoga.git
+cd phoneinfoga

@@ -1,0 +1,8 @@
+Firefox -> settings -> Network Settings-> Manual proxy configuration: HTTP/HTTPS Proxy - 127.0.0.1:8080
+default: use system porxy settings
+
+Common Function: repeater, decoder, intruder
+
+Listening for HTTPs traffic:
+goto "http://burpsuite/" and download the CA certificate
+Firefox -> settings -> Privacy & Security -> Certificates -> View Cerificates -> Authorities -> import -> Trust this CA to identify websites -> OK

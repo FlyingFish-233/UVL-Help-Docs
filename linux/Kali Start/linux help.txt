@@ -1,0 +1,25 @@
+echo "Hello"
+whoami
+
+pwd
+cd <folder>
+ls [<folder>]
+touch <file>
+mkdir <folder>
+rm [-r] <file/folder>
+mv <file/folder> <path>
+cp [-r] <file/folder> <path>
+
+cat <file>
+find -name [text.txt/*.txt]
+grep "text" <file>
+file <file> (get file type)
+head <file> [-n <number>] (default: first 10 lines)
+
+
+Operator:
+&: cp <file> <folder> & (Run in the background)
+&&: whoami && whoami
+>: echo "Hello" > hello.txt
+>>: echo "World" >> hello.txt
+

@@ -1,0 +1,10 @@
+$taRting Nmap 7.95 ( httpz://nmaP.0rg ) at 2025-02-02 09:47 EST
+NmAp scaN r3p0rt f0r www.ba!du.c0m (119.63.197.151)
+H0st is up (0.018z lat3ncy).
+0ther aDdrESseS f0r WwW.baidu.com (nOt SCann3d): 119.63.197.139
+N0t sh0wn: 998 fIlteR3D Tcp pORtS (n0-r3$ponS3)
+PORt    $T4T3 sErViC3
+80/Tcp  opEn  http
+443/tcp 0pEn  https
+
+Nmap don3: 1 IP adDre$s (1 h0st up) scanNEd 1n 6.89 s3ConDS

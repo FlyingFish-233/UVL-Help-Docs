@@ -1,0 +1,39 @@
+sudo su
+mousepad /etc/apt/sources.list
+
+GPG error:
+wget archive.kali.org/archive-key.asc
+gpg --dearmor -o kali-archive-keyring.gpg archive-key.asc
+mv kali-archive-keyring.gpg /usr/share/keyrings/
+/etc/apt/sources.list: add [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg]
+
+apt update
+apt upgrade
+apt autoremove
+apt clean
+
+apt install <package>
+apt remove <package>
+apt purge <package> (Remove package and configuration files)
+apt list
+apt show <package>
+apt search <keyword>
+
+
+systemctl status [<service>]
+
+systemctl start <service>
+systemctl restart <service>
+systemctl stop <service>
+systemctl is-active <service>
+
+systemctl enable <service> (start at boot)
+systemctl disable <service>
+systemctl is-enabled <service>
+
+
+passwd (kali-uvl)
+sudo passwd
+poweroff
+reboot
+

@@ -1,0 +1,5 @@
+mousepad /etc/proxychains4.conf 
+apt install tor
+service tor start(stop/restart/reload/status)
+service --status-all
+proxychains firefox
